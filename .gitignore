@@ -9,3 +9,25 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+redis_data/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
