@@ -65,12 +65,23 @@ Dockerized Flask API for sentiment analysis using HuggingFace transformers, feat
 | `POST` | `/batch-predict` | Analyze multiple texts |
 
 **Example Request:**
+You can use postman/thunder client or curl to check the api results.
 ```bash
 curl -X POST http://localhost:5000/predict \
   -H "Content-Type: application/json" \
   -d '{"text": "I love this product!", "use_cache": true}'
 ```
-
+```
+#for batch processing
+curl -X POST http://localhost:5000/batch-predict   -H "Content-Type: application/json"   -d '{
+    "texts": [
+      "I love this product",
+      "I hate it. This is not for me",
+      "Would recommend it to my friends"
+    ],
+    "use_cache": true
+  }'
+```
 ## Features & Architecture
 
 - **Stack**: Flask, Gunicorn, DistilBERT (SST-2), Redis.
